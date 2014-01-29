@@ -1,7 +1,10 @@
 ---
-layout: default
+layout: default2
 title: Tom Huang Knowledge Base
 ---
 
-Hello World
-
+<ul class="posts">
+  {% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <span>{{ post.date | date_to_string }}</span></li>
+  {% endfor %}
+</ul>
