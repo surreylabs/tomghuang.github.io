@@ -23,12 +23,20 @@
 </head>
 
 
-<body data-spy="scroll" data-target=".navbar-toc">
+<body>
 <div class="container">
     
     <div class="row header">
         <ul class="nav nav-pills pull-left">
-            <li class="site-title"><a href="/"><i class="fa fa-leaf"></i>{{ site.name }}</a></li>
+            <li class="site-title">
+                <a href="/">
+                    <span class="fa-stack fa-lg site-logo">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-leaf fa-stack-1x fa-inverse"></i>
+                    </span>
+                    {{ site.name }}
+                </a>
+            </li>
         </ul>
         <ul class="nav nav-pills pull-right">
             <li><a href="/">ARTICLES</a></li>

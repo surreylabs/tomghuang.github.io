@@ -1,4 +1,52 @@
-/* Space out content a bit */
+/*******************************************************************************
+ * Default Theme
+ *
+ * Copyright(c) 1999-2014, Tom Huang Software Consultancy.
+ * All rights reserved.
+ ******************************************************************************/
+
+
+/*
+ * Table of contents:
+ *
+ * Generic Tags
+ * Generic Classes
+ * Page Elements
+ *     Homepage - Post Title in the List
+ *     Homepage - Post Date in the List
+ *     Homepage - Section Titles
+ *     Homepage - Jumbotron - Slogan
+ *     Homepage - Jumbotron - Description
+ *     Homepage - Jumbotron - Button
+ *     Homepage - Jumbotron - Version
+ *     Post Page - Post Title
+ *     Post Page - Post Meta Data (e.g. Date)
+ *     Post Page - Figure
+ *     Page Header - Logo
+ *     Page Header - Title
+ *     Page Header - Main Menu Items
+ *     Page Footer - Slogan
+ *     Page Footer - Copyright
+ *     Page Footer - Meta Data
+ *     Page Footer - About Icon
+ *     Page Footer - Hyperlink
+ *     
+ * Old docs callout
+ *     Ads
+ * Side navigation
+ * Docs sections
+ * Callouts
+ * Grid styles
+ * Examples
+ * Code snippets (highlight)
+ * Responsive tests
+ * Glyphicons
+ * Customizer
+ * Miscellaneous
+ */
+
+/* Generic Tags */
+
 html {
   background-color: #2e2e2e;
 }
@@ -8,37 +56,7 @@ body {
   padding-bottom: 0px;
   color: #5f564e;
   background-color: white;
-  font-family: "Segoe UI Light", "Segoe UI", "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-ul.posts li a {
-  font-size: 1.0em;
-  font-weight: 600;
-  font-family: "Segoe UI Light", "Segoe UI", "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-ul.posts li span {
-  font-size: 0.9em;
-  font-weight: 400;
-  font-family: "Segoe UI Light", "Segoe UI", "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-div.post > h2 {
-  font-size: 1.8em;
-  font-family: "Segoe UI Light", "Segoe UI", "Fjalla One", Helvetica, Arial, sans-serif;
-}
-
-div.post > p.meta {
-  font-size: 0.9em;
-  font-family: "Segoe UI Light", "Segoe UI", "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-h4 {
-  font-size: 1.8em;
-  font-family: "Open Sans Condensed", "Fjalla One", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
 p {
@@ -49,77 +67,20 @@ pre {
   margin-bottom: 20px;
 }
 
-img.figure {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-}
+/* Generic Classes */
 
 .container {
   padding-bottom: 30px;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  padding-bottom: 5px;
-}
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 40px;
-  padding-top: 3px;
-  padding-bottom: 20px;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
-}
-
-.header li a {
-  color: #5f564e;
-  font-size: 18px;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
-}
-
-.header li.site-title a {
-  color: #5f564e;
-  text-transform: uppercase;
-  font-size: 22px;
-  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
-}
-
-.header li.site-title i.fa {
+.site-logo i.fa-circle,
+.site-logo i.fa-square {
   color: #198360;
-  padding-right: 10px;
 }
 
-.toc-heading {
-  color: #5f564e;
-  font-size: 16px;
-  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
-}
-
-ul.toc a {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  color: #5f564e;
-  font-size: 16px;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
-}
-
-div.toc button {
-  color: #5f564e;
-  font-size: 16px;
-  font-weight: normal;
-  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+.site-logo i.fa-th,
+.site-logo i.fa-terminal {
+  color: #eaeaea;
 }
 
 .profile-photo {
@@ -128,8 +89,19 @@ div.toc button {
   margin-top: 10px;
 }
 
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-/* Custom page footer */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+}
+
 .footer {
   padding-top: 15px;
   color: #eaeaea;
@@ -137,7 +109,80 @@ div.toc button {
   background-color: #2e2e2e;
 }
 
-footer div.slogan {
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  background: url('/img/background.jpg');
+}
+
+
+/* Page Elements */
+
+/* Homepage - Post Title in the List */
+ul.posts li a {
+  font-size: 1.0em;
+  font-weight: 600;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+/* Homepage - Post Date in the List */
+ul.posts li span {
+  font-size: 0.9em;
+  font-weight: 400;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+/* Homepage - Section Titles */
+div.home-post > h2 {
+  font-size: 1.8em;
+  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* Post Page - Post Title */
+div.post > h2 {
+  font-size: 1.8em;
+  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
+
+/* Post Page - Post Meta Data (e.g. Date) */
+div.post > p.meta {
+  font-size: 0.9em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+/* Post Page - Figure */
+img.figure {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Page Header - Logo */
+.header span.site-logo {
+  font-size: 0.80em;
+  margin-right: 6px;
+}
+
+/* Page Header - Title */
+.header li.site-title a {
+  color: #5f564e;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
+
+/* Page Header - Main Menu Items */
+.header li a {
+  color: #5f564e;
+  font-size: 1.5em;
+  font-family: "Open Sans Condensed", Helvetica, Arial, sans-serif;
+}
+
+/* Page Footer - Slogan */
+.footer div.slogan {
   text-align: center;
   text-transform: uppercase;
   margin-top: 10px;
@@ -146,7 +191,8 @@ footer div.slogan {
   font-family: "Fjalla One", Helvetica, Arial, sans-serif;
 }
 
-footer div.copyright {
+/* Page Footer - Copyright */
+.footer div.copyright {
   text-align: center;
   margin-top: 20px;
   font-weight: 300;
@@ -154,7 +200,8 @@ footer div.copyright {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-footer div.meta {
+/* Page Footer - Meta Data */
+.footer div.meta {
   text-align: center;
   margin-top: 5px;
   font-weight: 300;
@@ -162,108 +209,49 @@ footer div.meta {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-footer div.about {
+/* Page Footer - About Icon */
+.footer div.about {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
-footer a,
-footer a:hover {
+/* Page Footer - Hyperlink */
+.footer a,
+.footer a:hover {
   color: #FFB547;
 }
 
-/*
- * Side navigation
- *
- * Scrollspy and affixed enhanced navigation to highlight sections and secondary
- * sections of docs content.
- */
-
-/* By default it's not affixed in mobile views, so undo that */
-.bs-sidebar.affix {
-  position: static;
+/* Homepage - Jumbotron - Slogan */
+.jumbotron > h1 {
+  color: #2e2e2e;
+  font-weight: 800;
+  font-size: 1.8em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-/* First level of nav */
-.bs-sidenav {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top:    10px;
-  padding-bottom: 10px;
-  text-shadow: 0 1px 0 #fff;
-  background-color: #f7f5fa;
-  border-radius: 5px;
+/* Homepage - Jumbotron - Description */
+.jumbotron > p {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #2e2e2e;
+  font-size: 1.1em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-/* All levels of nav */
-.bs-sidebar .nav > li > a {
-  display: block;
-  color: #716b7a;
-  padding: 5px 20px;
-  border-radius: 0px;
-}
-.bs-sidebar .nav > li > a:hover,
-.bs-sidebar .nav > li > a:focus {
-  text-decoration: none;
-  background-color: #e5e3e9;
-  border-left: 1px solid #dbd8e0;
-}
-.bs-sidebar .nav > .active > a,
-.bs-sidebar .nav > .active:hover > a,
-.bs-sidebar .nav > .active:focus > a {
-  //font-weight: bold;
-  color: #563d7c;
-  background-color: transparent;
-  border-left: 1px solid #563d7c;
+/* Homepage - Jumbotron - Button */
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-weight: 700;
+  font-size: 0.8em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-/* Nav: second level (shown on .active) */
-.bs-sidebar .nav .nav {
-  display: none; /* Hide by default, but at >768px, show it */
-  margin-bottom: 8px;
+/* Homepage - Jumbotron - Version */
+.jumbotron span.version {
+  font-weight: 300;
+  font-size: 1.0em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
-.bs-sidebar .nav .nav > li > a {
-  padding-top:    3px;
-  padding-bottom: 3px;
-  padding-left: 30px;
-  font-size: 90%;
-}
-
-/* Show and affix the side nav when space allows it */
-@media (min-width: 992px) {
-  .bs-sidebar .nav > .active > ul {
-    display: block;
-  }
-  /* Widen the fixed sidebar */
-  .bs-sidebar.affix,
-  .bs-sidebar.affix-bottom {
-    width: 200px;
-  }
-  .bs-sidebar.affix {
-    position: fixed; /* Undo the static from mobile first approach */
-    top: 95px;
-  }
-  .bs-sidebar.affix-bottom {
-    position: absolute; /* Undo the static from mobile first approach */
-  }
-  .bs-sidebar.affix-bottom .bs-sidenav,
-  .bs-sidebar.affix .bs-sidenav {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 1200px) {
-  /* Widen the fixed sidebar again */
-  .bs-sidebar.affix-bottom,
-  .bs-sidebar.affix {
-    width: 200px;
-  }
-}
-
-
-
-
-
 
 /* Customize container */
 @media (min-width: 768px) {
@@ -271,26 +259,9 @@ footer a:hover {
     max-width: 900px;
   }
 }
+
 .container-narrow > hr {
   margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron .btn {
-  font-size: 21px;
-  padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-}
-.marketing p + h4 {
-  margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -302,10 +273,7 @@ footer a:hover {
     padding-left: 0;
     padding-right: 0;
   }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
+
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
