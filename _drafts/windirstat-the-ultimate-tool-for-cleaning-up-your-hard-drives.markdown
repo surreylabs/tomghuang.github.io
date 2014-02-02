@@ -1,0 +1,2 @@
+The development of hard drives follows the very famous Moore’s Law, and the storage capacity doubles every two years. The normal hard drive today, 1T, is x times larger than the one fifty years ago. However, no matter how large your hard drive is, you can always fill it out with important and unimportant data. When you want to clean up your hard drives, you want to start from the biggest part. That’s why WinDirStat is so useful.
+

@@ -1,0 +1,7 @@
+1. XBMC, I have to study how to use it, and how to make my TV able to play video files from my HD.
+
+2. I found that in the Excel spreadsheet, I can use filter to show my members. I don't need to track my members by eyes. Oh my god, why I'm so stupid. I didn't know this feature until now. And I found that, Excel is really powerful, and it is worth to learn more about Excel. Well, I do think that Word, Excel, PowerPoint, and Visio can do most of office tasks. Well done, Microsoft!
+
+3. We are working on exception handling in TIS for Asus currently. When we change language files in TIS, Asus will shutdown the machine before the language change. Asus requries that we have to handle this test case. Well, in order to prevent file corruption, I told Vincent using an algorithm: first, copy language files to the destination folder, but use a different name, for exapme abc.ini.new. After copying all files, we can do file rename for each language file. For example, 1. change the original abc.ini to abc.ini.old; 2. change abc.ini.new to abc.ini; 3. rename the next file. After completing renaming all files, delete *.old. This algorithm can guarantee that 99.999% of the time, there is always a usable abc.ini in the system, even Asus will shutdown the machine in the middle of changing language.
+
+4. For exception handling, we hope that we can design trasaction-able actions, so that when the actions fail, we can rollback.
