@@ -1,5 +1,6 @@
 name: Tom Huang Knowledge Base
-markdown: kramdown
+markdown: redcarpet
 pygments: true
 encoding: UTF-8
-
+redcarpet:
+  extensions: [tables]
