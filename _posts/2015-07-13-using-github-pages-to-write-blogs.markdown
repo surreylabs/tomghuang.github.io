@@ -76,7 +76,7 @@ For more markdown syntax reference, you can visit [Markdown Basics](https://help
 
 #### Image and Illustration
 
-![codepad][assets/codepad-org.png]
+<img src="/assets/launchy.png" alt="Launchy" class="img-rounded img-responsive figure">
 
 #### Table
 
