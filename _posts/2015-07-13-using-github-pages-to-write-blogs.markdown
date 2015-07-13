@@ -74,6 +74,10 @@ Here is *italics* and here is **bold**. You can also *mix __bold__ and italics t
 
 For more markdown syntax reference, you can visit [Markdown Basics](https://help.github.com/articles/markdown-basics/) and [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).
 
+#### Image and Illustration
+
+![codepad][assets/codepad-org.png]
+
 #### Table
 
 First Header  | Second Header
