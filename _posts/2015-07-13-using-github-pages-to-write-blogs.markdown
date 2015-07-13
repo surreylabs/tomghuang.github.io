@@ -5,16 +5,84 @@ date:   2015-07-13 10:34:04
 tags: github blog jekyll markdown
 ---
 
-Single-file executable is the most portable application format. To install the application, all you have to do is copying the executable to a specific folder, for example, D:\Bin. If D:\Bin is already in the PATH environment variable, you can access the executable without modifying any system-wide configuration. Besides, there’s no more DLL Hell problems.
+I haven't updated my blog for a long time. One of the reasons is that I always think using git commands to update my blog is a tedious job, and I already forgot how I did it long time ago. However, when I recently found that I can use Github web interface to add a blog post, things changed. Here is a step-by-step procedure of creating a blog post, so I won't forget how to do it again.
 
-However, .NET Platform encourages using tons of DLLs (assemblies), which conflicts this old UNIX wisdom. In a typical project, you may divide your core functionality into a dozen assemblies. Then you may need some third-party libraries that contribute another dozens of assemblies. For a simple and single-purpose utility, this is really overkill.
+Since I use Jekyll, the built-in blog system of Github Pages, all the blog posts are under the `<PROJ_ROOT>/_posts` directory. To add a blog post, go to the `_posts` directory and click the `+` sign to add a new file. The file name convention is `YYYY-MM-DD-blog-post-title.markdown`.
 
-If you want to create useful utilities in .NET Platform but hate this tons-of-assemblies phenomenon, you can use `ILMerge`. `ILMerge` is a tiny utility from Microsoft Research, which can link all of your application assemblies into a single-file executable. For example, when I ported my code review tool to C#, I ended up having three assemblies: `crvw.exe`, `crvcore.dll`, and `dotnetzip.dll`. In the last step in my build script, I use the following command to merge all these assemblies into a single `crvw.exe`:
+Then use the source code of this blog post as the template and submit the new blog post. To make writing blog posts as easy as possible, I don't write any comment for the commit. I believe minimalism can encourage myself writing more useful stuffs.
+
+#### Code Snippet
+
+Code snippet is appropriate for showing commands and one-liner.
 
 ```
 $> ilmerge /target:winexe /out:..\crvw.exe crvw.exe crvcore.dll dotnetzip.dll
 ```
+#### Code Listing
 
-It’s that simple to create a single-file executable in .NET Platform.
+If you want to show a complete function or code file, you can use code listing and add syntax highlighting.
 
-With tons of .NET libraries and the C# programming language, you already know how to write short and elegant code to implement complicated features. With ILMerge, now you also know how to create an elegant single-file executable that can make our lives much easier.
+```cpp
+#include <windows.h>
+#include <string>
+#include <iostream>
+
+#define BUF_SIZE 1024
+
+int main(int argc, char *argv[])
+{
+    std::string buf(BUF_SIZE, '\0');
+    if (GetConsoleTitleA(&buf[0], buf.capacity()) == 0)
+    {
+        return EXIT_FAILURE;
+    }
+
+    buf.resize(strlen(buf.c_str()));
+    std::cout << buf << std::endl;
+    return EXIT_SUCCESS;
+}
+```
+
+#### Styled Text
+
+Here is *italics* and here is **bold**. You can also *mix __bold__ and italics together*. If you want to emphasize ~~removed text~~, you can use strikethrough.
+
+#### Unordered List
+
+* Item 1
+* Item 2
+* Item 3
+
+#### Ordered List
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+#### Nested List
+
+* Item 1
+  1. Step 1
+  2. Step 2
+  3. Step 3
+* Item 2
+  * Subitem 1
+  * Subitem 2
+  * Subitem 3
+
+#### Link
+
+For more markdown syntax reference, you can visit [Markdown Basics](https://help.github.com/articles/markdown-basics/) and [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).
+
+#### Table
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -------------:|
+| col 3 is      | some wordy text |         $1600 |
+| col 2 is      | centered        |           $12 |
+| zebra stripes | are neat        |            $1 |
