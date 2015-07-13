@@ -279,3 +279,9 @@ img.figure {
     border-bottom: 0;
   }
 }
+
+/* Table *
+th, td {
+  padding: 0.5em;
+}
+}
