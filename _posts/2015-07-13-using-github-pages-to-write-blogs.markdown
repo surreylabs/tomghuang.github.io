@@ -76,10 +76,10 @@ For more markdown syntax reference, you can visit [Markdown Basics](https://help
 
 #### Table
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
 | :------------ |:---------------:| -------------:|
