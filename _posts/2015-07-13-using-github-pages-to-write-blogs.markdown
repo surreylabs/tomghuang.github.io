@@ -13,7 +13,7 @@ Then use the source code of this blog post as the template and submit the new bl
 
 #### Code Snippet
 
-Code snippet is appropriate for showing commands and one-liner.
+Code snippet is appropriate for showing commands and one-liners.
 
 ```
 $> ilmerge /target:winexe /out:..\crvw.exe crvw.exe crvcore.dll dotnetzip.dll
