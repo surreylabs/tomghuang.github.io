@@ -80,10 +80,14 @@ For more markdown syntax reference, you can visit [Markdown Basics](https://help
 
 #### Table
 
+A simple table:
+
 First Header  | Second Header
 ------------- | -------------
 Content Cell  | Content Cell
 Content Cell  | Content Cell
+
+You can specify text alignment for each column:
 
 | Left-Aligned  | Center Aligned  | Right Aligned |
 | :------------ |:---------------:| -------------:|
