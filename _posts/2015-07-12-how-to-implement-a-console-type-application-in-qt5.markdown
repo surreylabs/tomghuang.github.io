@@ -13,7 +13,7 @@ There are two types of console-type applications in Qt5:
 * A console-type application without the event loop
 * A console-type application with the event loop
 
-## A Console-Type Application without the Event Loop
+### A Console-Type Application without the Event Loop
 
 The minimalist Qt5 console application looks like the following `main.cpp` sample code. All you have to do is including the header files of the Qt5 classes that you need.
 
