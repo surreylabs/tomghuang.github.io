@@ -22,7 +22,7 @@ The minimalist Qt5 console application looks like the following `main.cpp` sampl
 
 int main(int argc, char *argv[])  
 {
-   qDebug() <<"Hello World" << endl;
+   qDebug() << "Hello World" << endl;
    return 0;
 }
 ```
@@ -90,35 +90,6 @@ You can call the cmake command to generate the Visual Studio solution file and t
 
 ```batch
 @echo off
-rem ////////////////////////////////////////////////////////////////////////////
-rem Generic CMake Wrapper
-rem
-rem Copyright (c) 2010-2015, Tom Huang Software Consultancy
-rem All rights reserved.
-rem
-rem Redistribution and use in source and binary forms, with or without
-rem modification, are permitted provided that the following conditions are met:
-rem     * Redistributions of source code must retain the above copyright
-rem       notice, this list of conditions and the following disclaimer.
-rem     * Redistributions in binary form must reproduce the above copyright
-rem       notice, this list of conditions and the following disclaimer in the
-rem       documentation and/or other materials provided with the distribution.
-rem     * Neither the name of the <organization> nor the
-rem       names of its contributors may be used to endorse or promote products
-rem       derived from this software without specific prior written permission.
-rem
-rem THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-rem AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-rem IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-rem ARE DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
-rem DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-rem (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-rem LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-rem ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-rem (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
-rem THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-rem ////////////////////////////////////////////////////////////////////////////
-
 setlocal
 
 if not defined VCINSTALLDIR (
@@ -251,86 +222,44 @@ endlocal
 
 You can download the sample project from my [Github repository](https://github.com/tomghuang/qt5-console-example).
 
-#### Code Snippet
 
-Code snippet is appropriate for showing commands and one-liners.
+### A Console-Type Application without the Event Loop
 
-```
-$> ilmerge /target:winexe /out:..\crvw.exe crvw.exe crvcore.dll dotnetzip.dll
-```
-#### Code Listing
-
-If you want to show a complete function or code file, you can use code listing and add syntax highlighting.
+If you need the event loop in your console-type application, you can use the following `main.cpp` as the starting point:
 
 ```cpp
-#include <windows.h>
-#include <string>
-#include <iostream>
+#include <QtCore>
+#include <QDebug>
 
-#define BUF_SIZE 1024
+class Task : public QObject
+{
+    Q_OBJECT
+
+public:
+    Task(QObject *parent = 0) : QObject(parent) {}
+
+public slots:
+    void run()
+    {
+        qDebug() << "Hello World from the Event Loop" << endl;
+        emit finished();
+    }
+
+signals:
+    void finished();
+};
+
+#include "main.moc"
 
 int main(int argc, char *argv[])
 {
-    std::string buf(BUF_SIZE, '\0');
-    if (GetConsoleTitleA(&buf[0], buf.capacity()) == 0)
-    {
-        return EXIT_FAILURE;
-    }
-
-    buf.resize(strlen(buf.c_str()));
-    std::cout << buf << std::endl;
-    return EXIT_SUCCESS;
+    QCoreApplication a(argc, argv);
+    Task *task = new Task(&a);
+    QObject::connect(task, SIGNAL(finished()), &a, SLOT(quit()));
+    QTimer::singleShot(0, task, SLOT(run()));
+    
+    return a.exec();
 }
 ```
 
-#### Styled Text
-
-Here is *italics* and here is **bold**. You can also *mix __bold__ and italics together*. If you want to emphasize ~~removed text~~, you can use strikethrough.
-
-#### Unordered List
-
-* Item 1
-* Item 2
-* Item 3
-
-#### Ordered List
-
-1. Item 1
-2. Item 2
-3. Item 3
-
-#### Nested List
-
-* Item 1
-  1. Step 1
-  2. Step 2
-  3. Step 3
-* Item 2
-  * Subitem 1
-  * Subitem 2
-  * Subitem 3
-
-#### Link
-
-For more markdown syntax reference, you can visit [Markdown Basics](https://help.github.com/articles/markdown-basics/) and [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).
-
-#### Image and Illustration
-
-<img src="/assets/launchy.png" alt="Launchy" class="img-rounded img-responsive figure">
-
-#### Table
-
-A simple table:
-
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
-
-You can specify text alignment for each column:
-
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ |:---------------:| -------------:|
-| col 3 is      | some wordy text |         $1600 |
-| col 2 is      | centered        |           $12 |
-| zebra stripes | are neat        |            $1 |
+You can download the sample project from my [Github repository](https://github.com/tomghuang/qt5-console-event-loop-example).
