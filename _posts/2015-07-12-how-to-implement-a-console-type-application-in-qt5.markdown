@@ -230,6 +230,7 @@ If you need the event loop in your console-type application, you can use the fol
 ```cpp
 #include <QtCore>
 #include <QDebug>
+#include <QSharedPointer>
 
 class Task : public QObject
 {
