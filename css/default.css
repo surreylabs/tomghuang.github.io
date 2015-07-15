@@ -146,6 +146,16 @@ div.post > h2 {
   font-family: "Fjalla One", Helvetica, Arial, sans-serif;
 }
 
+div.post > h3 {
+  font-size: 1.4em;
+  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
+
+div.post > h4 {
+  font-size: 1.2em;
+  font-family: "Fjalla One", Helvetica, Arial, sans-serif;
+}
+
 /* Post Page - Post Meta Data (e.g. Date) */
 div.post > p.meta {
   font-size: 0.9em;
