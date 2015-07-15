@@ -223,7 +223,7 @@ endlocal
 You can download the sample project from my [Github repository](https://github.com/tomghuang/qt5-console-example).
 
 
-### A Console-Type Application without the Event Loop
+### A Console-Type Application with the Event Loop
 
 If you need the event loop in your console-type application, you can use the following `main.cpp` as the starting point:
 
