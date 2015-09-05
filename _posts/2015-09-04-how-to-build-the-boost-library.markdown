@@ -24,3 +24,8 @@ $> b2 --build-dir=..\build_1_59 --toolset=msvc-14.0 --build-type=complete stage
 The `--build-dir` command-line option tells `b2` where to put all the intermediate files; the `--toolset` command-line option specifies the Visual Studio C++ version; the `--build-type=complete` command-line option causes `b2` to build all supported variants of the libraries; the special `stage` target places Boost library binaries in the stage\lib\ subdirectory of the Boost root folder.
 
 After building the Boost library, you can delete the `..\build_1_59` build folder to remove all intermediate files.
+
+
+#### Reference
+
+* [Getting Started on Windows](http://www.boost.org/doc/libs/1_58_0/more/getting_started/windows.html#identify-your-toolset)
