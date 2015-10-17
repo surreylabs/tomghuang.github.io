@@ -6,6 +6,7 @@ import sys
 from urllib import urlretrieve
 
 url = "https://raw.githubusercontent.com/tomghuang/tomghuang.github.io/master/assets/update.py"
+version = "0.0.2"
 
 def report_hook(block_num, block_size, total_size):
     readsofar = block_num * block_size
@@ -21,5 +22,6 @@ def report_hook(block_num, block_size, total_size):
 
 
 if __name__ == "__main__":
+    print(version)
     local_file_path = os.path.realpath(__file__)
     urlretrieve(url, local_file_path, report_hook)
