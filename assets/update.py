@@ -5,7 +5,7 @@ import os
 import sys
 from urllib import urlretrieve
 
-url = "https://raw.githubusercontent.com/tomghuang/tomghuang.github.io/master/assets/update.py"
+url = "https://github.com/tomghuang/tomghuang.github.io/raw/master/assets/update.py"
 version = "0.0.3"
 
 def report_hook(block_num, block_size, total_size):
