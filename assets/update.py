@@ -6,7 +6,7 @@ import sys
 from urllib import urlretrieve
 
 url = "https://github.com/tomghuang/tomghuang.github.io/raw/master/assets/update.py"
-version = "0.0.3"
+version = "0.0.5"
 
 def report_hook(block_num, block_size, total_size):
     readsofar = block_num * block_size
