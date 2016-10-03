@@ -1,15 +1,15 @@
 ---
 layout: post2
-title:  "Using Github Pages to Write Blogs"
+title:  "Using GitHub Pages to Write Blogs"
 date:   2015-07-13 10:34:04
 tags: github blog jekyll markdown
 ---
 
-I haven't updated my blog for a long time. One of the reasons is that I always think using git commands to update my blog is a tedious job, and I already forgot how I did it long time ago. However, when I recently found that I can use Github web interface to add a blog post, things changed. Here is a step-by-step procedure of creating a blog post, so I won't forget how to do it again.
+I haven't updated my blog for a long time. One of the reasons is that I always think using git commands to update my blog is a tedious job, and I already forgot how I did it long time ago. However, when I recently found that I can use GitHub web interface to add a blog post, things changed. Here is a step-by-step procedure of creating a blog post, so I won't forget how to do it again.
 
-Since I use Jekyll, the built-in blog system of Github Pages, all the blog posts are under the `<PROJ_ROOT>/_posts` directory. To add a blog post, go to the `_posts` directory and click the `+` sign to add a new file. The file name convention is `YYYY-MM-DD-blog-post-title.markdown`.
+Since I use Jekyll, the built-in blog system of GitHub Pages, all the blog posts are under the `<PROJ_ROOT>/_posts` directory. To add a blog post, go to the `_posts` directory and click the `+` sign to add a new file. The file name convention is `YYYY-MM-DD-blog-post-title.markdown`.
 
-Then use the source code of this blog post as the template and submit the new blog post. To make writing blog posts as easy as possible, I don't write any comment for the commit. I believe minimalism can encourage myself writing more useful stuffs.
+Then use the source code of this blog post as the template and submit the new blog post. To make writing blog posts as easy as possible, I don't write any comment for the commit. I believe minimalism can encourage myself writing more useful stuff.
 
 #### Code Snippet
 
